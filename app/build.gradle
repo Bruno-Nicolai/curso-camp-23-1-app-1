@@ -31,10 +31,34 @@ android {
         buildConfigField "String", "BASE_URL", '"https://gateway.marvel.com/v1/public/"'
     }
 
+    // Code shrinking: detects and safely removes unused classes, fields, methods and attributes
+    // from your app and its library dependencies.
     buildTypes {
+        /*manage debugs - testing*/
+        debug {
+            applicationIdSuffix '.debug'
+            debuggable true
+        }
+        /*pre-deploy - testing - always use it before deliver to someone*/
+        staging {
+            initWith debug
+
+//            created proguard-rules-staging.pro and now I can debug this build
+            minifyEnabled true
+            applicationIdSuffix '.staging'
+            proguardFiles getDefaultProguardFile(
+                    'proguard-android-optimize.txt'),
+                    'proguard-rules.pro',
+                    'proguard-rules-staging.pro'
+        }
+        /*deploy - final release (Google Play)*/
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+            shrinkResources true //remove recursos não utilizados do aplicativo empacotado,
+            // incluindo recursos não utilizados nas dependências da biblioteca de seu aplicativo
+            proguardFiles getDefaultProguardFile(
+                    'proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
         }
     }
 
