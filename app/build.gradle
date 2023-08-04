@@ -16,6 +16,15 @@ apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
 android {
     compileSdkVersion 33
 
+    signingConfigs {
+        release {
+        storeFile file('marvel_app_key_store')
+            storePassword '@Elitecraft'
+            keyAlias 'marvel-app'
+            keyPassword '@Elitecraft'
+        }
+    }
+
     defaultConfig {
         applicationId "com.example.marvelapp"
         minSdkVersion 23
@@ -53,12 +62,14 @@ android {
         }
         /*deploy - final release (Google Play)*/
         release {
+            signingConfig signingConfigs.release
             minifyEnabled true
             shrinkResources true //remove recursos não utilizados do aplicativo empacotado,
             // incluindo recursos não utilizados nas dependências da biblioteca de seu aplicativo
             proguardFiles getDefaultProguardFile(
                     'proguard-android-optimize.txt'),
                     'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
 
