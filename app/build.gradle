@@ -16,6 +16,15 @@ apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
 android {
     compileSdkVersion 33
 
+    signingConfigs {
+        release {
+        storeFile file('marvel_app_key_store')
+            storePassword '@Elitecraft'
+            keyAlias 'marvel-app'
+            keyPassword '@Elitecraft'
+        }
+    }
+
     defaultConfig {
         applicationId "com.example.marvelapp"
         minSdkVersion 23
@@ -31,10 +40,36 @@ android {
         buildConfigField "String", "BASE_URL", '"https://gateway.marvel.com/v1/public/"'
     }
 
+    // Code shrinking: detects and safely removes unused classes, fields, methods and attributes
+    // from your app and its library dependencies.
     buildTypes {
+        /*manage debugs - testing*/
+        debug {
+            applicationIdSuffix '.debug'
+            debuggable true
+        }
+        /*pre-deploy - testing - always use it before deliver to someone*/
+        staging {
+            initWith debug
+
+//            created proguard-rules-staging.pro and now I can debug this build
+            minifyEnabled true
+            applicationIdSuffix '.staging'
+            proguardFiles getDefaultProguardFile(
+                    'proguard-android-optimize.txt'),
+                    'proguard-rules.pro',
+                    'proguard-rules-staging.pro'
+        }
+        /*deploy - final release (Google Play)*/
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true //remove recursos não utilizados do aplicativo empacotado,
+            // incluindo recursos não utilizados nas dependências da biblioteca de seu aplicativo
+            proguardFiles getDefaultProguardFile(
+                    'proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
 
