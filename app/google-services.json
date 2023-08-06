@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "842335239226",
+    "project_id": "curso-camp-bruno-nicolai",
+    "storage_bucket": "curso-camp-bruno-nicolai.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:842335239226:android:52a29797b84e1ff1c60903",
+        "android_client_info": {
+          "package_name": "com.example.marvelapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "842335239226-vutufk78lm6a4gmns28bell3trojnpj8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQqfFrH0QnAODC3CbB-w6kmCz-a1o0uk8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "842335239226-vutufk78lm6a4gmns28bell3trojnpj8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:842335239226:android:a1758473661c44b2c60903",
+        "android_client_info": {
+          "package_name": "com.example.marvelapp.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "842335239226-vutufk78lm6a4gmns28bell3trojnpj8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQqfFrH0QnAODC3CbB-w6kmCz-a1o0uk8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "842335239226-vutufk78lm6a4gmns28bell3trojnpj8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:842335239226:android:e8bb02b8643fc631c60903",
+        "android_client_info": {
+          "package_name": "com.example.marvelapp.staging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "842335239226-vutufk78lm6a4gmns28bell3trojnpj8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQqfFrH0QnAODC3CbB-w6kmCz-a1o0uk8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "842335239226-vutufk78lm6a4gmns28bell3trojnpj8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
