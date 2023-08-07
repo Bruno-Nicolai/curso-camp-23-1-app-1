@@ -17,7 +17,7 @@ class DataWrapperResponseFactory {
                     id = "1011334",
                     name = "3-D Man",
                     thumbnail = ThumbnailResponse(
-                        path = "https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg",
+                        path = "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784",
                         extension = "jpg"
                     )
                 ),
@@ -25,7 +25,7 @@ class DataWrapperResponseFactory {
                     id = "1017100",
                     name = "A-Bomb (HAS)",
                     thumbnail = ThumbnailResponse(
-                        path = "https://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16.jpg",
+                        path = "http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16",
                         extension = "jpg"
                     )
                 )
