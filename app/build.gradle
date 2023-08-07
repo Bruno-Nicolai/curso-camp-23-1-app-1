@@ -35,6 +35,11 @@ android {
 
         testInstrumentationRunner "com.example.marvelapp.CustomTestRunner"
 
+        // The following argument makes the Android Test Orchestrator run its
+        // "pm clear" command after each test invocation. This command ensures
+        // that the app's state is completely cleared between tests.
+        testInstrumentationRunner "com.example.marvelapp.CustomTestRunner"
+
         // should correspond to key/value pairs inside the file
         buildConfigField "String", "PUBLIC_KEY", apikeyProperties['PUBLIC_KEY']
         buildConfigField "String", "PRIVATE_KEY", apikeyProperties['PRIVATE_KEY']
