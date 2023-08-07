@@ -46,6 +46,10 @@ android {
         buildConfigField "String", "BASE_URL", '"https://gateway.marvel.com/v1/public/"'
     }
 
+    testOptions {
+        execution "ANDROIDX_TEST_ORCHESTRATOR"
+    }
+
     // Code shrinking: detects and safely removes unused classes, fields, methods and attributes
     // from your app and its library dependencies.
     buildTypes {
@@ -152,8 +156,14 @@ dependencies {
     testImplementation "androidx.room:room-testing:$room_version"
 
     // Instrumentation tests (20%)
+    def espresso_version = "3.4.0"
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestUtil 'androidx.test:orchestrator:1.4.1'
+
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$espresso_version"
 
     // Ui tests (10%)
     def fragment_version = "1.4.0"
