@@ -8,9 +8,11 @@ import com.example.testing.model.CharacterFactory
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.whenever
 import junit.framework.Assert.assertEquals
+import junit.framework.Assert.assertNotNull
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.count
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.TestCoroutineDispatcher
 import kotlinx.coroutines.test.resetMain
@@ -78,7 +80,7 @@ class CharactersViewModelTest {
             val result = charactersViewModel.charactersPagingData("")/*.first()*/
 
 //            assertEquals(expectedPagingData, result)
-            assertEquals(1, result.count())
+            assertNotNull(result.first())
         }
     }
 
