@@ -75,6 +75,17 @@ class CharactersFragmentTest {
         ).check(matches(isDisplayed()))
     }
 
+    @Test
+    fun shouldShowErrorViewWhenAPIGoesOnError() {
+        // Arrange
+        server.enqueue(MockResponse().setResponseCode(404))
+//            .setBody("characters_p1.json".asJsonString()))
+
+        onView(
+            withId(R.id.tv_initial_loading_error)
+        ).check(matches(isDisplayed()))
+    }
+
     @After
     fun tearDown() {
         server.shutdown()
